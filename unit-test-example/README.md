@@ -12,7 +12,7 @@ Or, if you have [pytest-watch](https://pypi.org/project/pytest-watch) installed:
 ptw
 ```
 
-A convenience script for measuring code coverage is also privded:
+A convenience script for measuring code coverage is also provided:
 
 ```shell
 ./run-with-cov-details.sh
