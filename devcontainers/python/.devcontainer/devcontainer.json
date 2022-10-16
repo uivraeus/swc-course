@@ -40,7 +40,7 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"streetsidesoftware.code-spell-checker",
-                                "donjayamanne.githistory",
+        "donjayamanne.githistory",
 				"ryanluker.vscode-coverage-gutters"
 			]
 		}
@@ -56,10 +56,10 @@
 	"remoteUser": "vscode",
 	"features": {
 		"git": "os-provided"
-	}
+	},
 
 	//My addition to share/re-use files for different devcontainer definitions
-        //Special tricks here to overcome the ".." build context
-        "initializeCommand": "cp .devcontainer/common-bashrc.append bashrc.append",
-        "postStartCommand": "rm -f ${containerWorkspaceFolder}/bashrc.append"
+	//Special tricks here to overcome the ".." build context
+	"initializeCommand": "cp .devcontainer/common-bashrc.append bashrc.append",
+	"postStartCommand": "rm -f ${containerWorkspaceFolder}/bashrc.append"
 }
