@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
+"""
+A test suite for the Greeter class
+"""
+
 import pytest
 
 from greeting import Greeter

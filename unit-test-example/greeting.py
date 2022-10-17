@@ -1,6 +1,8 @@
-# -*- coding: utf-8 -*-
+"""
+In this file we have the "production code" that we need to test
+"""
 
-class Greeter(object):
+class Greeter:
     "A simple example"
 
     def __init__(self, phrase = "Hello"):
