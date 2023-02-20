@@ -1,14 +1,24 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/cpp
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-	"name": "Craftsmanship Course C/C++",
+	"name": "SWC Course - C/C++",
 	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-11, debian-10, ubuntu-22.04, ubuntu-20.04, ubuntu-18.04
-		// Use Debian 11, Ubuntu 18.04 or Ubuntu 22.04 on local arm64/Apple Silicon
-		"args": { "VARIANT": "debian-11" }
+		"dockerfile": "Dockerfile"
 	},
-	"runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+				"packages": "tree,curl,check,pkg-config,lcov"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -25,18 +35,10 @@
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "gcc -v",
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
-	"features": {
-		"git": "os-provided"
-	},
-
-	//My addition to share/re-use files for different devcontainer definitions
-	"initializeCommand": "cp .devcontainer/common-bashrc.append .devcontainer/.bashrc.append"
+	// Add custom stuff to .bashrc
+	"initializeCommand": "cp .devcontainer/common-bashrc.append ./temp-bashrc.append",
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && rm ${containerWorkspaceFolder}/temp-bashrc.append"
 }

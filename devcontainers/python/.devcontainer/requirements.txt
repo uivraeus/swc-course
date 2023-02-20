@@ -1,0 +1,4 @@
+TextTest
+pytest
+pytest-watch
+pytest-cov

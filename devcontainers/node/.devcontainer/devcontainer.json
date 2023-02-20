@@ -1,14 +1,23 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/javascript-node
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Craftsmanship Course Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
-		// Append -bullseye or -buster to pin to an OS version.
-		// Use -bullseye variants on local arm64/Apple Silicon.
-		"args": { "VARIANT": "18-bullseye" }
+	"name": "SWR Course - Node.js & TypeScript",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+				"packages": "tree,curl"
+		},
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
 	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// (See below)
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -24,18 +33,10 @@
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
-
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node",
-	"features": {
-		"git": "os-provided"
-	},
-
-	//My addition to share/re-use files for different devcontainer definitions
-	"initializeCommand": "cp .devcontainer/common-bashrc.append .devcontainer/bashrc.append"
+	// Add custom stuff to .bashrc
+	"initializeCommand": "cp .devcontainer/common-bashrc.append ./temp-bashrc.append",
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && rm ${containerWorkspaceFolder}/temp-bashrc.append"
 }
