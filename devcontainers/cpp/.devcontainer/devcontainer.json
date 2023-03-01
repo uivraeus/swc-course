@@ -30,7 +30,8 @@
 				"ms-vscode.cmake-tools",
 				"streetsidesoftware.code-spell-checker",
 				"donjayamanne.githistory",
-				"ryanluker.vscode-coverage-gutters"
+				"ryanluker.vscode-coverage-gutters",
+				"jacqueslucke.gcov-viewer"
 			]
 		}
 	},
