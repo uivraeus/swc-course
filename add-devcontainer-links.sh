@@ -44,3 +44,7 @@ ln -s ${NODE_DEVC_DIR} ${JS_PROJ_DIR}/${DEVC_DIRNAME}
 ln -s ${PYTHON_DEVC_DIR} ${PY_1_PROJ_DIR}/${DEVC_DIRNAME}
 ln -s ${PYTHON_DEVC_DIR} ${PY_2_PROJ_DIR}/${DEVC_DIRNAME}
 ln -s ${NODE_DEVC_DIR} ${TS_PROJ_DIR}/${DEVC_DIRNAME}
+
+# Clean slate
+docker container prune --force
+docker volume rm vscode --force
