@@ -41,5 +41,6 @@
 
 	// Add custom stuff to .bashrc
 	"initializeCommand": "cp .devcontainer/common-bashrc.append ./temp-bashrc.append",
-	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && rm ${containerWorkspaceFolder}/temp-bashrc.append"
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc",
+	"postAttachCommand": "rm -f ${containerWorkspaceFolder}/temp-bashrc.append"
 }

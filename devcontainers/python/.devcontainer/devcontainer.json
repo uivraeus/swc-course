@@ -38,5 +38,6 @@
 
 	// Add custom stuff to .bashrc
 	"initializeCommand": "cp .devcontainer/common-bashrc.append ./temp-bashrc.append && cp .devcontainer/requirements.txt ./temp-requirements.txt",
-	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && rm ${containerWorkspaceFolder}/temp-bashrc.append && pip3 install --user -r temp-requirements.txt && rm ${containerWorkspaceFolder}/temp-requirements.txt"
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && pip3 install --user -r temp-requirements.txt",
+	"postAttachCommand": "rm -f ${containerWorkspaceFolder}/temp-bashrc.append && rm -f ${containerWorkspaceFolder}/temp-requirements.txt"
 }
