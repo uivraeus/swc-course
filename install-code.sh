@@ -20,3 +20,12 @@ sudo apt install -y code
 # Extension for DevContainers
 # https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-containers
+
+# Also for Docker (mostly to avoid annoying prompt during startup)
+# https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
+
+# Customize some settings to non-default values
+SETTINGS_DIR=${HOME}/.vscode
+[ -d "$SETTINGS_DIR" ] || mkdir $SETTINGS_DIR
+cp ./vscode-settings.json $SETTINGS_DIR/settings.json

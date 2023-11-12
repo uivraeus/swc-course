@@ -9,4 +9,4 @@ REPO_DIR=./GildedRose-Refactoring-Kata
 
 [ -d "${REPO_DIR}" ] && rm -rf ${REPO_DIR}
 
-git clone https://github.com/uivraeus/GildedRose-Refactoring-Kata.git
+git clone https://github.com/uivraeus/GildedRose-Refactoring-Kata.git $REPO_DIR
