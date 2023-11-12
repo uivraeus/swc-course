@@ -11,7 +11,7 @@ def test_ulf():
     "Test with phrase override"
     greeter = Greeter("Yo!")
 
-    response = greeter.hello("Ulf", 46)
+    response = greeter.hello("Ulf", 47)
     assert "Yo! Ulf. You're on fire!" == response
 
 def test_junior():
