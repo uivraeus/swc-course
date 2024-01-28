@@ -1,9 +1,9 @@
-'// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "SWC Course - Python 3",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:0-3.11"
+	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -11,7 +11,7 @@
 	        	"packages": "tree,curl"
 		},
 		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {}
-	}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

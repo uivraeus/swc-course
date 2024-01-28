@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Put symlinks to applicable devcontainer for a subset of GildedRose sub-directories.
-# (delete any previous symlink or actual .devcontainer directory)
+# Put copies of applicable devcontainers for a subset of GildedRose sub-directories.
+# (delete any previous .devcontainer directories)
 
 set -eu # 👉 https://explainshell.com/explain?cmd=set+-eux
 
@@ -30,20 +30,20 @@ PY_1_PROJ_DIR=${REPO_BASE_DIR}/python
 PY_2_PROJ_DIR=${REPO_BASE_DIR}/python-pytest
 TS_PROJ_DIR=${REPO_BASE_DIR}/TypeScript
 
-# remove any existing links
-find  ${REPO_BASE_DIR} -name ${DEVC_DIRNAME} -exec rm -rf {} \;
+# remove any existing devcontainers
+find  ${REPO_BASE_DIR} -depth -type d -name ${DEVC_DIRNAME} -exec rm -rf {} \;
 
 set -eux
 
-ln -s ${CPP_DEVC_DIR} ${C_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${CSHARP_DEVC_DIR} ${CSHARP_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${CPP_DEVC_DIR} ${CPP_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${GO_DEVC_DIR} ${GO_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${JAVA_DEVC_DIR} ${JAVA_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${NODE_DEVC_DIR} ${JS_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${PYTHON_DEVC_DIR} ${PY_1_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${PYTHON_DEVC_DIR} ${PY_2_PROJ_DIR}/${DEVC_DIRNAME}
-ln -s ${NODE_DEVC_DIR} ${TS_PROJ_DIR}/${DEVC_DIRNAME}
+cp -r -L ${CPP_DEVC_DIR} ${C_PROJ_DIR}
+cp -r -L ${CSHARP_DEVC_DIR} ${CSHARP_PROJ_DIR}
+cp -r -L ${CPP_DEVC_DIR} ${CPP_PROJ_DIR}
+cp -r -L ${GO_DEVC_DIR} ${GO_PROJ_DIR}
+cp -r -L ${JAVA_DEVC_DIR} ${JAVA_PROJ_DIR}
+cp -r -L ${NODE_DEVC_DIR} ${JS_PROJ_DIR}
+cp -r -L ${PYTHON_DEVC_DIR} ${PY_1_PROJ_DIR}
+cp -r -L ${PYTHON_DEVC_DIR} ${PY_2_PROJ_DIR}
+cp -r -L ${NODE_DEVC_DIR} ${TS_PROJ_DIR}
 
 # Clean slate
 docker container prune --force
