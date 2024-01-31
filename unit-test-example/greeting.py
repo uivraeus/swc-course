@@ -1,5 +1,6 @@
 """
-In this file we have the "production code" that we need to test
+In this file we have the "production code" that we need
+to test
 """
 
 class Greeter:
