@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# This scripts assumes Ubuntu-22.04 (with systemd)
+# This scripts assumes Ubuntu-24.04 (with systemd)
 
 echo "***************************************************"
 echo "Installing VS Code"

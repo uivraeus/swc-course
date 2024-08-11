@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Pull all base images used for the various dev-containers
-
 set -eu # 👉 https://explainshell.com/explain?cmd=set+-eux
 
 ./apt-upgrade.sh
