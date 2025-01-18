@@ -1,6 +1,6 @@
 {
   "editor.minimap.enabled": false,
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "readme",
   "diffEditor.ignoreTrimWhitespace": false,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
