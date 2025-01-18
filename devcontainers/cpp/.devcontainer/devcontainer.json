@@ -31,7 +31,8 @@
 				"streetsidesoftware.code-spell-checker",
 				"donjayamanne.githistory",
 				"ryanluker.vscode-coverage-gutters",
-				"jacqueslucke.gcov-viewer"
+				"jacqueslucke.gcov-viewer",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},
