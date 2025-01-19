@@ -1,16 +1,28 @@
 {
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "maximized",
+
   "editor.minimap.enabled": false,
   "workbench.startupEditor": "readme",
+
   "diffEditor.ignoreTrimWhitespace": false,
+
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "[markdown]": {
       "files.trimTrailingWhitespace": false
   },
+
   "telemetry.telemetryLevel": "off",
+
   "cmake.options.statusBarVisibility": "compact",
   "cmake.showOptionsMovedNotification": false,
   "cmake.configureOnOpen": true,
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-  "git.openRepositoryInParentFolders": "always"
+
+  "git.openRepositoryInParentFolders": "always",
+
+  "dotnet.preferCSharpExtension": true,
+  "dotnet.projects.enableAutomaticRestore": false,
+  "dotnetAcquisitionExtension.enableTelemetry": false
 }
