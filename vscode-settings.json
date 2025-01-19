@@ -8,6 +8,9 @@
       "files.trimTrailingWhitespace": false
   },
   "telemetry.telemetryLevel": "off",
-  "cmake.configureOnOpen": false,
+  "cmake.options.statusBarVisibility": "compact",
+  "cmake.showOptionsMovedNotification": false,
+  "cmake.configureOnOpen": true,
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "git.openRepositoryInParentFolders": "always"
 }
