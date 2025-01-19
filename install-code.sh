@@ -8,6 +8,12 @@ echo "***************************************************"
 
 set -uxo pipefail
 
+if command -v code &> /dev/null
+then
+    echo "code already installed, skipping"
+    exit 0
+fi
+
 # Install VS code [https://linuxiac.com/install-visual-studio-code-on-ubuntu-22-04/]
 sudo apt install -y software-properties-common apt-transport-https wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor > packages.microsoft.gpg
@@ -25,7 +31,5 @@ code --install-extension ms-vscode-remote.remote-containers
 # https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
 code --install-extension ms-azuretools.vscode-docker
 
-# Customize some settings to non-default values
-SETTINGS_DIR=${HOME}/.config/Code/User
-[ -d "$SETTINGS_DIR" ] || mkdir -p $SETTINGS_DIR
-cp ./vscode-settings.json $SETTINGS_DIR/settings.json
+# Ensure that settings adaptations are configured
+bash ./reset-code.sh
