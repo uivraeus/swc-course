@@ -28,8 +28,8 @@ sudo apt install -y code
 code --install-extension ms-vscode-remote.remote-containers
 
 # Also for Docker (mostly to avoid annoying prompt during startup)
-# https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
-code --install-extension ms-azuretools.vscode-docker
+# https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-containers
+code --install-extension ms-azuretools.vscode-containers
 
 # Ensure that settings adaptations are configured
 bash ./reset-code.sh
