@@ -47,4 +47,5 @@ cp -r -L ${NODE_DEVC_DIR} ${TS_PROJ_DIR}
 
 # Clean slate
 docker container prune --force
+docker volume prune --all --force
 docker volume rm vscode --force
